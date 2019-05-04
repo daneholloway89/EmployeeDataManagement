@@ -1,64 +1,75 @@
 <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="utf-8">
-            <title>Employee Data Management</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-            <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-            <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-            <link rel="shortcut icon" type="image/png" href="assets/images/type.png"/>
-            
-        </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <title>Data Management Tool!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron jumbotron-fluid" style="background-color:#000000">
+        <div class="container jumbo-container" style="background-color:#000000">
+            <h1 class="display-4">Employee Data Management</h1>
+            <p class="lead">A comprehensive Directory of Employee Billable Hours</p>
+        </div>
+    </div>
 
-        <body>
-
-          <div class="container" id="container1">
-            <div class="jumbotron jumbotron-fluid">
-                <div class="container">
-                  <h1 class="display-4">Employee Data Management</h1>
-                  <p class="lead">A Comprehensive Directory of Employee Billable Hours</p>
+    <div class="panel panel-default">
+        <div class="panel-heading">Current Employees</div>
+        <div class="panel-body">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title" id="headline">Headline</h5>
+                    <h6 class="card-subtitle mb-2 text-muted" id="byline">By Line</h6>
+                    <p class="card-text" id="section">Section: Sports</p>
+                    <p class="card-text" id="pub">Pub Date</p>
+                    <p class="card-text" id="url">URL</p>
                 </div>
-              </div>
             </div>
+            <!-- End Cards -->
+        </div>   
+    </div>
 
-          <div class="container" id="form">
-              <form>
-                  <div class="form-group">
-                    <label for="exampleFormControlInput1">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1">Example select</label>
+    <div class="panel panel-default">
+        <div class="panel-heading">Add Employee</div>
+        <div class="panel-body">
+            <form>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Search Term</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Search Here">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Number of Records to Retrieve</label>
                     <select class="form-control" id="exampleFormControlSelect1">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
+                    <option>1</option>
+                    <option>3</option>
+                    <option>5</option>
                     </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect2">Example multiple select</label>
-                    <select multiple class="form-control" id="exampleFormControlSelect2">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                  </div>
-                </form>
-          </div>
-
-        </body>
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Start Year (Optional)</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="YYYY">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">End Year (Optional)</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="YYYY">
+                </div>
+            </form>
+        </div>   
+    </div>
 
 
+</div>
+<!-- jQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Script -->
+<script src="./assets/app.js"></script>
 
-
+</body>
 </html>
