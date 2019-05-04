@@ -1,2 +1,2 @@
-# EmployeeDataManagement
-Employee Data Management Application Using Firebase
+# nyts-preproject
+Practice for project 1
