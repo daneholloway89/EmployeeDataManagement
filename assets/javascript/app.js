@@ -21,6 +21,10 @@ $(function() {
   var inputStartDate = "";
   var inputMonthlyRate = "";
 
+  // Moment vars
+  var dateFormat = "MM/DD/YYYY";
+  var convertedDate = moment(inputStartDate, dateFormat);
+
   // add submitt onClick handler
   $("#submit").on("click", function(e) {
     e.preventDefault();
@@ -31,9 +35,13 @@ $(function() {
     inputRole = $("#input-role")
       .val()
       .trim();
-    inputStartDate = $("#input-start-date")
+    inputStartDate = moment($("#input-start-date")
       .val()
-      .trim();
+      .trim());
+
+      console.log(inputStartDate.format(dateFormat));
+      var calcMonths = (inputStartDate.diff(moment(), "months") * -1);
+
     inputMonthlyRate = $("#input-monthly-rate")
       .val()
       .trim();
@@ -42,10 +50,10 @@ $(function() {
       $("<tr>").append(
         $("<td>").text(inputName),
         $("<td>").text(inputRole),
-        $("<td>").text(inputStartDate),
-        $("<td>").text("something"),
+        $("<td>").text(inputStartDate.format(dateFormat)),
+        $("<td>").text(calcMonths + " months"),
         $("<td>").text("$" + inputMonthlyRate),
-        $("<td>").text("something else")
+        $("<td>").text("$" + (calcMonths * inputMonthlyRate))
       )
     );
 
@@ -53,14 +61,34 @@ $(function() {
       {
         name: inputName,
         role: inputRole,
-        startDate: inputStartDate,
+        startDate: inputStartDate.foramt("X"),
         monthlyRate: inputMonthlyRate,
       },
       function(err) {
+        if( err ){
         console.log({ err });
+        }
+        else{
+          console.log("saved to firebase");
+        }
       }
     );
 
     $("form").trigger("reset");
   });
+
+// add grab snapshot here 
+
+// Firebase watcher + initial loader HINT: .on("value")
+database.ref().on("value", function (snapshot) {
+  $("").text(snapshot.val().name);
+  $("").text(snapshot.val().email);
+  $("").text(snapshot.val().age);
+  $("").text(snapshot.val().comment);
+}
+// Create Error Handling
+, function(errorObject) {
+  console.log("The read failed: " + errorObject.code);
+});
+
 });
