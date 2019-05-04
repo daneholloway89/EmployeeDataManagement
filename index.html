@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <title>Data Management Tool!</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./assets/style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 <body>
 <div class="container">
@@ -24,12 +24,12 @@
             <!-- Replace with a table -->
             <table style="width:100%">
                     <tr>
-                      <th>Employee Name</th>
-                      <th>Role</th> 
-                      <th>Start Date</th>
-                      <th>Months Worked</th>
-                      <th>Monthly Rate ($)</th>
-                      <th>Total Billed ($)</th>
+                      <th id="employee-name">Employee Name</th>
+                      <th id="role">Role</th> 
+                      <th id="start-date">Start Date</th>
+                      <th id="months-worked">Months Worked</th>
+                      <th id="monthly-rate">Monthly Rate ($)</th>
+                      <th id="total-billed">Total Billed ($)</th>
                     </tr>
                     <tr></tr>
                   </table>
@@ -43,22 +43,22 @@
             <form>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Employee Name</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="John Smith...">
+                    <input type="text" class="form-control" id="input-employee-name" placeholder="John Smith...">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Role</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Position...">
+                    <input type="text" class="form-control" id="input-role" placeholder="Position...">
                 </div>
                 
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Start Date (MM/DD/YYYY)</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="MM/DD/YYYY">
+                    <input type="date" class="form-control" id="input-start-date" placeholder="MM/DD/YYYY">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Monthly Rate</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="$50,000...">
+                    <input type="number" class="form-control" id="input-monthly-rate" placeholder="$50,000...">
                 </div>
-                <input class="btn btn-primary" type="submit" value="Submit">
+                <input class="btn btn-primary" id="submit" type="submit" value="Submit">
             </form>
         </div>   
     </div>
@@ -68,7 +68,7 @@
 <!-- jQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Script -->
-<script src="./assets/app.js"></script>
+<script src="./assets/javascript/app.js"></script>
 
 </body>
 </html>
